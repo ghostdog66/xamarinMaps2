@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XamarinLatinoMaps"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="XamarinLatinoMaps.MainPage">
+    <StackLayout>
+       
+        <maps:Map x:Name="MapView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsShowingUser="True"/>
+        <StackLayout Padding="5" Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="FillAndExpand">
+            <Button HorizontalOptions="EndAndExpand" VerticalOptions="Center" HeightRequest="50" Text="Street" Clicked="Street_OnClicked" />
+            <Button HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="50" Text="Hybrid" Clicked="Hybrid_OnClicked" />
+            <Button HorizontalOptions="StartAndExpand" VerticalOptions="Center" HeightRequest="50" Text="Satellite" Clicked="Satellite_OnClicked" />
+        </StackLayout>
+        <ScrollView VerticalOptions="End">
+            <StackLayout Orientation="Vertical">
+
+
+
+            <Button Text="Posición actual"  
+                         Clicked="OnButtonClicked"  
+                         TextColor="Chocolate"  
+                         FontSize="Medium"
+                        />
+            <Grid Padding="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="*" />
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+
+                <Label Text="Longitude"  
+                       FontSize="Medium"  
+                        TextColor="BlueViolet"
+                   VerticalOptions="Center"
+                   Grid.Column="0"
+                        Grid.Row="0"/>
+                <Label x:Name="LogitudeLabel"  
+                       FontSize="Medium"
+                   VerticalOptions="Center"
+                   HorizontalOptions="FillAndExpand"
+                   Grid.Column="1"
+                        Grid.Row="0"/>
+                <Label Text="Latitude"  
+                   
+                       FontSize="Medium"  
+                        TextColor="DarkRed"
+                   VerticalOptions="Center"
+                   Grid.Column="0"
+                        Grid.Row="1"/>
+                <Label x:Name="LatitudeLabel"   
+                       FontSize="Medium"
+                   VerticalOptions="Center"
+                   HorizontalOptions="FillAndExpand"
+                   Grid.Column="1"
+                        Grid.Row="1"/>
+            </Grid>
+
+            <Button Text="Cargar API"  
+                         Clicked="LoadApi"  
+                         TextColor="Chocolate"  
+                         FontSize="Medium"
+                        />
+
+            <Button Text="Cargar API completamente"  
+                         Clicked="FullLoadApi"  
+                         TextColor="Chocolate"  
+                         FontSize="Medium"
+                         />
+
+            </StackLayout>
+        </ScrollView>
+
+    </StackLayout>
+</ContentPage>
